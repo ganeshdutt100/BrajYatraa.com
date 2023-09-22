@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Baloo+Bhaijaan+2&family=Croissant+One&family=Lilita+One&family=Merriweather&family=Mooli&family=Oswald:wght@500&family=Playfair+Display:wght@500&family=Roboto+Slab&display=swap');
+*{
+  font-family: 'Croissant One', cursive;
+}
+.about-sec-1{
+    background: url('/Sourse Files/Background Images/replicate-prediction-kctbmbrcig7yx5jb7xksucojb4.png')no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+
+}
+.about-sec-image {
+    --color: #8A9B0F; /* the border color */
+    --border: 10px;   /* the border thickness*/
+    --offset: 20px;   /* control the offset*/
+    --gap: 5px;       /* the gap on hover */
+    
+    --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
+    --_o: calc(3*var(--offset));
+    padding: 
+      calc(var(--gap) + var(--border))
+      calc(var(--gap) + var(--border) + var(--offset))
+      calc(var(--gap) + var(--border) + var(--offset))
+      calc(var(--gap) + var(--border));
+    background: 
+      linear-gradient(      var(--_c)) var(--_o) var(--_o), 
+      linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
+    background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
+    background-repeat: no-repeat;
+    filter: grayscale(.4);
+    transition: .5s;
+    cursor: pointer;
+  }
+  .about-sec-image:hover {
+    background-position: 0px 0px;
+    background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
+    filter: grayscale(0);
+  }
+
+
+
+  /* sec-2 */
+  @property --radius {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: -5%;
+  }
+  
+  @keyframes scene-transition {
+    to { --radius: 105%; }
+  }
+  
+  .about-scenes {
+    position: relative;
+    aspect-ratio: 2.4 / 1;
+    outline: 2px solid #ccc;
+  }
+  
+  .about-scene-1, .about-scene-2 {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+  }
+  
+  .about-scene-1 {
+    background-image: url('/Sourse Files/Gallery/G3.jpg');
+    background-color: cover;
+    /* background-size:contain; */
+    /* background-repeat: no-repeat; */
+  }
+  
+  .about-scene-2 {
+    /* background-image: url('/Sourse Files/temples/temples/t6.jpg'); */
+    background-image: url('/Sourse Files/temples/temples/t6.jpg');
+    background-size: cover;
+
+    z-index: -1;
+    -webkit-mask-image: radial-gradient(
+      circle,
+      #fff calc(var(--radius) - 5%),
+      transparent calc(var(--radius) + 5%)
+    );
+  }
+  
+  .about-scenes:is(:hover, :focus) .about-scene-2 {
+    z-index: 1;
+    animation: scene-transition 2s linear forwards;
+  }
+  
+  .about-scene-title {
+    position: absolute;
+    max-width: 45%;
+    margin: min(40px, 4vw);
+    font-size: 1.25em;
+  }
+  
+  .about-scene-1 .about-scene-title {
+    top: 0;
+    right: 0;
+    color: #fff;
+    text-align: right;
+  }
+  
+  .about-scene-2 .about-scene-title {
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    text-align: left;
+  }
+  
+  /* everything else */
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  
+  
+  .about-wrapper {
+    display: grid;
+    gap: 30px;
+    width: min(1000px, 100%);
+  }
+  
+  .intro {
+    text-align: center;
+  }
+  
+  .heading {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .heading::before, .heading::after {
+    content: ' — ';
+  }
+  
+  .nudge {
+    margin: 0;
+    color: #888;
+    font-size: 1.25em;
+  }
+  
+  
+  
+  
+  
+  
+  .about-scenes:is(:hover, :focus) {
+    background-image: radial-gradient(circle, #fff calc(var(--radius) - 5%), transparent calc(var(--radius) + 5%));
+    animation: scene-transition 2s linear forwards;
+  }
+
+  .iframe-contact::-webkit-scrollbar {
+    display: none; /* Scrollbar ko hide karega */
+  }
+  .iframe-contact{
+    overflow: scroll;
+  }
+
